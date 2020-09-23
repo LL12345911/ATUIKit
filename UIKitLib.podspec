@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'UINavigation' do |ss|
-    ss.source_files = 'UIKitLib/UINavigation/*.{h,m}'
+    ss.source_files = 'UIKitLib/UINavigation/**/*.{h,m}'
     end
 
     s.subspec 'TabBar' do |ss|
