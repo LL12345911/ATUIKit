@@ -209,7 +209,7 @@
 		412CD9C6251B282F000411B6 = {
 			isa = PBXGroup;
 			children = (
-				412CDA7F251B2ADF000411B6 /* ATUIKit */,
+				412CDA7F251B2ADF000411B6 /* UIKitLib */,
 				412CD9D1251B282F000411B6 /* Demo */,
 				412CD9ED251B2834000411B6 /* DemoTests */,
 				412CD9F8251B2834000411B6 /* DemoUITests */,
@@ -263,7 +263,7 @@
 			path = DemoUITests;
 			sourceTree = "<group>";
 		};
-		412CDA7F251B2ADF000411B6 /* ATUIKit */ = {
+		412CDA7F251B2ADF000411B6 /* UIKitLib */ = {
 			isa = PBXGroup;
 			children = (
 				412CDA80251B2ADF000411B6 /* UIImage */,
@@ -288,8 +288,8 @@
 				412CDAE1251B2ADF000411B6 /* StaticView */,
 				412CDAE4251B2ADF000411B6 /* UITextField */,
 			);
-			name = ATUIKit;
-			path = ../ATUIKit;
+			name = UIKitLib;
+			path = ../UIKitLib;
 			sourceTree = "<group>";
 		};
 		412CDA80251B2ADF000411B6 /* UIImage */ = {
