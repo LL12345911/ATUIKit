@@ -84,77 +84,45 @@
     self.titleEdgeInsets = titleEdgeInsets;
     self.contentEdgeInsets = contentEdgeInsets;
     
-//    CGFloat imageWith = self.imageView.image.size.width;
-//    CGFloat imageHeight = self.imageView.image.size.height;
-//#pragma clang diagnostic push
-//#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-//    CGFloat labelWidth = [self.titleLabel.text sizeWithFont:self.titleLabel.font].width;
-//    CGFloat labelHeight = [self.titleLabel.text sizeWithFont:self.titleLabel.font].height;
-//#pragma clang diagnostic pop
-//
-//    CGFloat imageOffsetX = (imageWith + labelWidth) / 2 - imageWith / 2;//image中心移动的x距离
-//    CGFloat imageOffsetY = imageHeight / 2 + spacing / 2;//image中心移动的y距离
-//    CGFloat labelOffsetX = (imageWith + labelWidth / 2) - (imageWith + labelWidth) / 2;//label中心移动的x距离
-//    CGFloat labelOffsetY = labelHeight / 2 + spacing / 2;//label中心移动的y距离
-//
-//    switch (postion) {
-//        case ATImagePositionLeft:{
-//            self.imageEdgeInsets = UIEdgeInsetsMake(0, -spacing/2, 0, spacing/2);
-//            self.titleEdgeInsets = UIEdgeInsetsMake(0, spacing/2, 0, -spacing/2);
-//
-//        }
-//            break;
-//
-//        case ATImagePositionRight:{
-//            self.imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth + spacing/2, 0, -(labelWidth + spacing/2));
-//            self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageHeight + spacing/2), 0, imageHeight + spacing/2);
-//        }
-//            break;
-//
-//        case ATImagePositionTop:{
-//
-//            CGSize imageSize = self.imageView.frame.size;
-//            CGSize titleSize = self.titleLabel.frame.size;
-//#pragma clang diagnostic push
-//#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-//            CGSize textSize = [self.titleLabel.text sizeWithFont:self.titleLabel.font];
-//#pragma clang diagnostic pop
-//            CGSize frameSize = CGSizeMake(ceilf(textSize.width), ceilf(textSize.height));
-//            if (titleSize.width + 0.5 < frameSize.width) {
-//                titleSize.width = frameSize.width;
-//            }
-//
-//            CGFloat totalHeight = imageSize.height + titleSize.height;
-//            self.imageEdgeInsets = UIEdgeInsetsMake(- (totalHeight - imageSize.height + spacing), 0.0, 0.0, - titleSize.width);
-//            self.titleEdgeInsets = UIEdgeInsetsMake(0, - imageSize.width, - (totalHeight - titleSize.height + spacing), 0);
-////
-////            CGFloat labelHeight = [self getStringHeightWithText:self.titleLabel.text font:self.titleLabel.font viewWidth:self.frame.size.width];
-////            CGRect imageFrame = [self imageView].frame;
-////
-////            CGFloat topheight = (self.frame.size.height - labelHeight - imageFrame.size.height- spacing)/ 2.0;
-////
-////            self.imageView.center = CGPointMake(self.frame.size.width/2, topheight +self.imageView.frame.size.height/2);
-////
-////            self.titleLabel.frame = CGRectMake(0, imageFrame.size.height + spacing + topheight, self.frame.size.width, labelHeight);
-////            self.titleLabel.textAlignment = NSTextAlignmentCenter;
-////
-////            //self.imageEdgeInsets = UIEdgeInsetsMake(-imageOffsetY, imageOffsetX, imageOffsetY, -imageOffsetX);
-////            //self.titleEdgeInsets = UIEdgeInsetsMake(labelOffsetY, -labelOffsetX, -labelOffsetY, labelOffsetX);
-//
-//        }
-//            break;
-//
-//        case ATImagePositionBottom:{
-//            self.imageEdgeInsets = UIEdgeInsetsMake(imageOffsetY, imageOffsetX, -imageOffsetY, -imageOffsetX);
-//            self.titleEdgeInsets = UIEdgeInsetsMake(-labelOffsetY, -labelOffsetX, labelOffsetY, labelOffsetX);
-//        }
-//            break;
-//
-//        default:
-//            break;
-//    }
-    
 }
 
+
+
+- (void)TagSetImagePosition:(ATImagePosition)postion spacing:(CGFloat)spacing {
+     CGFloat imgWidth = self.imageView.bounds.size.width;
+     CGFloat imgHeight = self.imageView.bounds.size.height;
+     CGFloat labWidth = self.titleLabel.bounds.size.width;
+     CGFloat labHeight = self.titleLabel.bounds.size.height;
+     CGSize textSize = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName:self.titleLabel.font}];
+     CGSize frameSize = CGSizeMake(ceilf(textSize.width), ceilf(textSize.height));
+     if (labWidth < frameSize.width) {
+         labWidth = frameSize.width;
+     }
+     CGFloat kMargin = spacing/2.0;
+     switch (postion) {
+         case ATImagePositionLeft:
+             [self setImageEdgeInsets:UIEdgeInsetsMake(0, -kMargin, 0, kMargin)];
+             [self setTitleEdgeInsets:UIEdgeInsetsMake(0, kMargin, 0, -kMargin)];
+             break;
+             
+         case ATImagePositionRight:
+            [self setImageEdgeInsets:UIEdgeInsetsMake(0, labWidth + kMargin, 0, -labWidth - kMargin)];
+             [self setTitleEdgeInsets:UIEdgeInsetsMake(0, -imgWidth - kMargin, 0, imgWidth + kMargin)];
+             break;
+             
+         case ATImagePositionTop:
+             [self setImageEdgeInsets:UIEdgeInsetsMake(0,0, labHeight + spacing, -labWidth)];
+             [self setTitleEdgeInsets:UIEdgeInsetsMake(imgHeight + spacing, -imgWidth, 0, 0)];
+             break;
+             
+         case ATImagePositionBottom:
+             [self setImageEdgeInsets:UIEdgeInsetsMake(labHeight + spacing,0, 0, -labWidth)];
+             [self setTitleEdgeInsets:UIEdgeInsetsMake(0, -imgWidth, imgHeight + spacing, 0)];
+             break;
+             
+         default:
+             break;
+     }
+}
 
 @end

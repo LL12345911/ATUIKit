@@ -27,6 +27,10 @@ typedef NS_ENUM(NSInteger, ATImagePosition) {
 - (void)at_setImagePosition:(ATImagePosition)postion spacing:(CGFloat)spacing;
 
 
+// 设置图文位置
+- (void)TagSetImagePosition:(ATImagePosition)postion spacing:(CGFloat)spacing;
+
+    
 ////
 /////**
 //// 设置button的imageView和titleLabel的布局样式及它们的间距

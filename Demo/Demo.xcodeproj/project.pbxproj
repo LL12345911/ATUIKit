@@ -349,12 +349,12 @@
 		412CDA9E251B2ADF000411B6 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				412CDA9F251B2ADF000411B6 /* UIButton+ATImagePosition.h */,
 				412CDAA0251B2ADF000411B6 /* ATCustomButton.h */,
-				412CDAA1251B2ADF000411B6 /* UIButton+ATIndicator.m */,
-				412CDAA2251B2ADF000411B6 /* UIButton+ATImagePosition.m */,
 				412CDAA3251B2ADF000411B6 /* ATCustomButton.m */,
+				412CDA9F251B2ADF000411B6 /* UIButton+ATImagePosition.h */,
+				412CDAA2251B2ADF000411B6 /* UIButton+ATImagePosition.m */,
 				412CDAA4251B2ADF000411B6 /* UIButton+ATIndicator.h */,
+				412CDAA1251B2ADF000411B6 /* UIButton+ATIndicator.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
