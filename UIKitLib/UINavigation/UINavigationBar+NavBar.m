@@ -37,7 +37,7 @@ static char overlayImageKey;
                 CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(896, 414)) ||
                 CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeMake(414, 896)));
     }
-    BOOL isIPhoneX = [platform isEqualToString:@"iPhone10,3"] || [platform isEqualToString:@"iPhone10,6"] || [platform isEqualToString:@"iPhone11,8"] || [platform isEqualToString:@"iPhone11,2"] || [platform isEqualToString:@"iPhone11,4"] || [platform isEqualToString:@"iPhone11,6"];
+    BOOL isIPhoneX = [platform isEqualToString:@"iPhone10,3"] || [platform isEqualToString:@"iPhone10,6"] || [platform isEqualToString:@"iPhone11,8"] || [platform isEqualToString:@"iPhone11,2"] || [platform isEqualToString:@"iPhone11,4"] || [platform isEqualToString:@"iPhone11,6"] || [platform isEqualToString:@"iPhone12,1"] || [platform isEqualToString:@"iPhone12,3"] || [platform isEqualToString:@"iPhone12,5"] || [platform isEqualToString:@"iPhone13,1"] || [platform isEqualToString:@"iPhone13,2"] || [platform isEqualToString:@"iPhone13,3"] || [platform isEqualToString:@"iPhone13,4"];
     return isIPhoneX;
 }
 
