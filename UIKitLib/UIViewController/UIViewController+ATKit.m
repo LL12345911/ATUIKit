@@ -47,7 +47,7 @@
     }
 }
 
-- (void)pushViewController:(NSString *)className animated:(BOOL)animated {
+- (void)pushViewClassController:(NSString *)className animated:(BOOL)animated {
     if([self emptyStr:className].length <= 0) return;
     Class class = NSClassFromString(className);
     if (class == nil) return;

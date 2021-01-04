@@ -26,7 +26,7 @@
 - (void)deleteViewController:(NSString *)className complete:(void(^)(void))complete;
 
 /** 跳转到指定的视图控制器 */
-- (void)pushViewController:(NSString *)className animated:(BOOL)animated;
+- (void)pushViewClassController:(NSString *)className animated:(BOOL)animated;
 
 
 /// 跳转到指定的视图控制器 隐藏底部把导航栏
