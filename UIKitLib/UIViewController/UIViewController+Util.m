@@ -140,9 +140,16 @@ void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector){
 /// 加载进度
 - (void)startIndicatorLoading{
     @autoreleasepool {
-       // UIWindow *window = [UIApplication sharedApplication].keyWindow;
-//       UIWindow *window = UIApplication.sharedApplication.delegate.window;
-            //    window.windowLevel = UIWindowLevelAlert;
+        [self startIndicatorLoadingWithAlpha:0.6];
+    }
+}
+/// 加载进度
+/// @param alpha 透明度 0-1（值范围）
+- (void)startIndicatorLoadingWithAlpha:(CGFloat)alpha{
+    @autoreleasepool {
+        // UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        // UIWindow *window = UIApplication.sharedApplication.delegate.window;
+        // window.windowLevel = UIWindowLevelAlert;
         CGFloat height = self.view.frame.size.height;
         CGFloat width = self.view.frame.size.width;
         if (self.indicatorBack) {
@@ -151,7 +158,7 @@ void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector){
         }
         self.indicatorBack = [[UIView alloc] init];
         self.indicatorBack.frame = CGRectMake(0, 0, width, height);
-        self.indicatorBack.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.7];
+        self.indicatorBack.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:alpha];
         [self.view addSubview:self.indicatorBack];
         
         UIActivityIndicatorView* indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -165,8 +172,17 @@ void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector){
     }
 }
 
+
 /// 全屏加载进度
 - (void)startLoadingFullScreen{
+    @autoreleasepool {
+        [self startLoadingFullScreenWithAlpha:0.6];
+    }
+}
+
+/// 全屏加载进度
+/// @param alpha 透明度 0-1（值范围）
+- (void)startLoadingFullScreenWithAlpha:(CGFloat)alpha{
     @autoreleasepool {
         // UIWindow *window = [UIApplication sharedApplication].keyWindow;
         UIWindow *window = UIApplication.sharedApplication.delegate.window;
@@ -180,7 +196,7 @@ void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector){
         
         self.indicatorBack = [[UIView alloc] init];
         self.indicatorBack.frame = CGRectMake(0, 0, width, height);
-        self.indicatorBack.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.7];
+        self.indicatorBack.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:alpha];
         [window addSubview:self.indicatorBack];
         
         UIActivityIndicatorView* indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -255,24 +271,24 @@ void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector){
 }
 
 
-/// 获取当前控制器
-- (UIViewController *)currentController {
-    UIViewController* vc = [UIApplication sharedApplication].keyWindow.rootViewController;
-    while (1) {
-        if ([vc isKindOfClass:[UITabBarController class]]) {
-            vc = ((UITabBarController*)vc).selectedViewController;
-        }
-        if ([vc isKindOfClass:[UINavigationController class]]) {
-            vc = ((UINavigationController*)vc).visibleViewController;
-        }
-        if (vc.presentedViewController) {
-            vc = vc.presentedViewController;
-        }else{
-            break;
-        }
-    }
-    return vc;
-}
+///// 获取当前控制器
+//- (UIViewController *)currentController {
+//    UIViewController* vc = [UIApplication sharedApplication].keyWindow.rootViewController;
+//    while (1) {
+//        if ([vc isKindOfClass:[UITabBarController class]]) {
+//            vc = ((UITabBarController*)vc).selectedViewController;
+//        }
+//        if ([vc isKindOfClass:[UINavigationController class]]) {
+//            vc = ((UINavigationController*)vc).visibleViewController;
+//        }
+//        if (vc.presentedViewController) {
+//            vc = vc.presentedViewController;
+//        }else{
+//            break;
+//        }
+//    }
+//    return vc;
+//}
 
 
 @end

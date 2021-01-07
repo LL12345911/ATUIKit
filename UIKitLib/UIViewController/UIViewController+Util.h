@@ -39,9 +39,23 @@ typedef void(^LeftBarButtonItemBlock)(void);
 
 /// 加载进度
 - (void)startIndicatorLoading;
+
+/// 加载进度
+/// @param alpha 透明度 0-1（值范围）
+- (void)startIndicatorLoadingWithAlpha:(CGFloat)alpha;
+
 /// 全屏加载进度
 - (void)startLoadingFullScreen;
+
+/// 全屏加载进度
+/// @param alpha 透明度 0-1（值范围）
+- (void)startLoadingFullScreenWithAlpha:(CGFloat)alpha;
+
+/// 停止加载
 - (void)stopIndicatorLoading;
+
+/// 停止加载
+/// @param time 时间
 - (void)stopIndicatorLoading:(float)time;
 
 
@@ -79,6 +93,6 @@ typedef void(^LeftBarButtonItemBlock)(void);
 - (UIWindow *)getKeyWindow;
 
 /// 获取当前控制器
-- (UIViewController *)currentController;
+//- (UIViewController *)currentController;
 
 @end
