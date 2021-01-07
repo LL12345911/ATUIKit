@@ -253,22 +253,22 @@ void swizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector){
     [self.navigationController.navigationBar at_setTitleTextAttribute:titleColor ? titleColor : [UIColor whiteColor]];
 }
 
-
-- (UIWindow *)getKeyWindow{
-    UIWindow* window = nil;
-    if (@available(iOS 13.0, *)){
-        for (UIWindowScene* windowScene in [UIApplication sharedApplication].connectedScenes){
-            if (windowScene.activationState == UISceneActivationStateForegroundActive){
-                window = windowScene.windows.firstObject;
-                
-                break;
-            }
-        }
-    }else {
-        window = [UIApplication sharedApplication].keyWindow;
-    }
-    return window;
-}
+//
+//- (UIWindow *)getKeyWindow{
+//    UIWindow* window = nil;
+//    if (@available(iOS 13.0, *)){
+//        for (UIWindowScene* windowScene in [UIApplication sharedApplication].connectedScenes){
+//            if (windowScene.activationState == UISceneActivationStateForegroundActive){
+//                window = windowScene.windows.firstObject;
+//                
+//                break;
+//            }
+//        }
+//    }else {
+//        window = [UIApplication sharedApplication].keyWindow;
+//    }
+//    return window;
+//}
 
 
 ///// 获取当前控制器

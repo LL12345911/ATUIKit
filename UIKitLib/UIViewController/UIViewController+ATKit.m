@@ -185,7 +185,7 @@
 
 
 //获取当前控制器
-- (UIViewController *)getCurrentController {
+- (UIViewController *)currentController {
     UIViewController* vc = [UIApplication sharedApplication].keyWindow.rootViewController;
     while (1) {
         if ([vc isKindOfClass:[UITabBarController class]]) {
@@ -202,6 +202,24 @@
     }
     return vc;
 }
+
+
+- (UIWindow *)getKeyWindow{
+    UIWindow* window = nil;
+    if (@available(iOS 13.0, *)){
+        for (UIWindowScene* windowScene in [UIApplication sharedApplication].connectedScenes){
+            if (windowScene.activationState == UISceneActivationStateForegroundActive){
+                window = windowScene.windows.firstObject;
+                
+                break;
+            }
+        }
+    }else {
+        window = [UIApplication sharedApplication].keyWindow;
+    }
+    return window;
+}
+
 
 
 - (UIViewController *)topPresentedController {

@@ -89,8 +89,7 @@ typedef void(^LeftBarButtonItemBlock)(void);
 - (void)at_navigationBarTitleColor:(UIColor *)titleColor;
 
 
-/// 获取 KeyWindow
-- (UIWindow *)getKeyWindow;
+
 
 /// 获取当前控制器
 //- (UIViewController *)currentController;

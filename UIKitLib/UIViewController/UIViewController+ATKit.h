@@ -77,7 +77,10 @@
 
  @return 当前控制器
  */
-- (UIViewController *)getCurrentController;
+- (UIViewController *)currentController;
+
+/// 获取 KeyWindow
+- (UIWindow *)getKeyWindow;
 
 /**
  *  获取根目录
