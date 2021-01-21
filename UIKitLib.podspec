@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
    s.name         = 'UIKitLib'
-    s.version      = '1.0.1'
+    s.version      = '1.1'
     s.summary      = 'iOS开发基本库'
     s.description  = <<-DESC 
     ***
@@ -27,6 +27,10 @@ Pod::Spec.new do |s|
 
      s.subspec 'UIImage' do |ss|
     ss.source_files = 'UIKitLib/UIImage/*.{h,m}'
+    end
+ 
+    s.subspec 'WebView' do |ss|
+    ss.source_files = 'UIKitLib/WebView/*.{h,m}'
     end
 
     s.subspec 'UIScrollView' do |ss|

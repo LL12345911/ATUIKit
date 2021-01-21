@@ -57,6 +57,7 @@
 		412CDB0D251B2ADF000411B6 /* ATWave.m in Sources */ = {isa = PBXBuildFile; fileRef = 412CDAE0251B2ADF000411B6 /* ATWave.m */; };
 		412CDB0E251B2ADF000411B6 /* ATStaticView.m in Sources */ = {isa = PBXBuildFile; fileRef = 412CDAE2251B2ADF000411B6 /* ATStaticView.m */; };
 		412CDB0F251B2ADF000411B6 /* UITextField+ATKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 412CDAE6251B2ADF000411B6 /* UITextField+ATKit.m */; };
+		41E47C7C25B94CB0008DE21C /* SGWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41E47C7B25B94CB0008DE21C /* SGWebView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +180,8 @@
 		412CDAE5251B2ADF000411B6 /* UITextField+ATKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+ATKit.h"; sourceTree = "<group>"; };
 		412CDAE6251B2ADF000411B6 /* UITextField+ATKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ATKit.m"; sourceTree = "<group>"; };
 		412CDB10251B2BAB000411B6 /* UIKitLibDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKitLibDefine.h; sourceTree = "<group>"; };
+		41E47C7A25B94CB0008DE21C /* SGWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGWebView.h; sourceTree = "<group>"; };
+		41E47C7B25B94CB0008DE21C /* SGWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGWebView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +269,7 @@
 		412CDA7F251B2ADF000411B6 /* UIKitLib */ = {
 			isa = PBXGroup;
 			children = (
+				41E47C7925B94C7F008DE21C /* WebView */,
 				412CDA80251B2ADF000411B6 /* UIImage */,
 				412CDA8D251B2ADF000411B6 /* UIScrollView */,
 				412CDA90251B2ADF000411B6 /* ToastView */,
@@ -371,16 +375,16 @@
 		412CDAA8251B2ADF000411B6 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				412CDAA9251B2ADF000411B6 /* UIView+ATDraggable.h */,
-				412CDAAA251B2ADF000411B6 /* UIView+Util.m */,
-				412CDAAB251B2ADF000411B6 /* UIView+Frame.m */,
+				412CDAB2251B2ADF000411B6 /* UIView+Animation.h */,
 				412CDAAC251B2ADF000411B6 /* UIView+Animation.m */,
 				412CDAAD251B2ADF000411B6 /* UIView+ATAnyCorners.h */,
-				412CDAAE251B2ADF000411B6 /* UIView+ATDraggable.m */,
-				412CDAAF251B2ADF000411B6 /* UIView+Util.h */,
-				412CDAB0251B2ADF000411B6 /* UIView+Frame.h */,
 				412CDAB1251B2ADF000411B6 /* UIView+ATAnyCorners.m */,
-				412CDAB2251B2ADF000411B6 /* UIView+Animation.h */,
+				412CDAA9251B2ADF000411B6 /* UIView+ATDraggable.h */,
+				412CDAAE251B2ADF000411B6 /* UIView+ATDraggable.m */,
+				412CDAB0251B2ADF000411B6 /* UIView+Frame.h */,
+				412CDAAB251B2ADF000411B6 /* UIView+Frame.m */,
+				412CDAAF251B2ADF000411B6 /* UIView+Util.h */,
+				412CDAAA251B2ADF000411B6 /* UIView+Util.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -513,6 +517,15 @@
 				412CDAE6251B2ADF000411B6 /* UITextField+ATKit.m */,
 			);
 			path = UITextField;
+			sourceTree = "<group>";
+		};
+		41E47C7925B94C7F008DE21C /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				41E47C7A25B94CB0008DE21C /* SGWebView.h */,
+				41E47C7B25B94CB0008DE21C /* SGWebView.m */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -680,6 +693,7 @@
 				412CDAFC251B2ADF000411B6 /* UIView+ATAnyCorners.m in Sources */,
 				412CDAED251B2ADF000411B6 /* UIScrollView+ATKit.m in Sources */,
 				412CDAF3251B2ADF000411B6 /* AngleView.m in Sources */,
+				41E47C7C25B94CB0008DE21C /* SGWebView.m in Sources */,
 				412CDAEC251B2ADF000411B6 /* UIImage+QRCode.m in Sources */,
 				412CDB06251B2ADF000411B6 /* UIViewController+ATKit.m in Sources */,
 				412CDAE9251B2ADF000411B6 /* UIImage+Filter.m in Sources */,

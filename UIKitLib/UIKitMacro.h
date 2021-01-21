@@ -88,4 +88,6 @@
 #import "MarsTabBar.h"
 #import "UIKitLibDefine.h"
 
+#import "SGWebView.h"
+
 #endif /* UIKitMacro_h */
